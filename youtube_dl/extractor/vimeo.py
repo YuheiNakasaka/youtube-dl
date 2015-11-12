@@ -375,7 +375,7 @@ class VimeoIE(VimeoBaseInfoExtractor):
         video_upload_date = None
         mobj = re.search(r'<time[^>]+datetime="([^"]+)"', webpage)
         if mobj is not None:
-            video_upload_date = unified_strdate(mobj.group(1))
+            video_upload_date = None #unified_strdate(mobj.group(1))
 
         try:
             view_count = int(self._search_regex(r'UserPlays:(\d+)', webpage, 'view count'))
